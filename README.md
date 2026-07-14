@@ -1,6 +1,4 @@
-# RasterEditor.WinFormsDemo
-
-[![Build](https://github.com/H1k4n/RasterEditor.WinFormsDemo/actions/workflows/build.yml/badge.svg)](https://github.com/H1k4n/RasterEditor.WinFormsDemo/actions/workflows/build.yml)
+# RasterEditor.WinForms
 
 Учебный растровый редактор на **C# / .NET 8 / WinForms** с многослойной композицией, инструментами рисования и набором алгоритмов обработки изображений. Проект подходит как демонстрация архитектуры desktop-приложения для обработки растра и как основа для дипломной работы.
 
@@ -54,13 +52,6 @@
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Visual Studio 2022 (опционально) с workload **.NET desktop development**
 
-## Быстрый старт
-
-### Visual Studio
-1. Клонируйте репозиторий.
-2. Откройте `RasterEditor.WinFormsDemo.sln`.
-3. Запустите проект (**F5**).
-
 ### CLI
 
 ```bash
@@ -68,20 +59,6 @@ git clone https://github.com/H1k4n/RasterEditor.WinFormsDemo.git
 cd RasterEditor.WinFormsDemo
 dotnet run --project RasterEditor.WinFormsDemo.csproj
 ```
-
-### Сборка Release
-
-```bash
-dotnet build RasterEditor.WinFormsDemo.sln -c Release
-```
-
-### Публикация (portable, framework-dependent)
-
-```bash
-dotnet publish RasterEditor.WinFormsDemo.csproj -c Release -o publish
-```
-
-Запуск: `publish\RasterEditor.WinFormsDemo.exe` (нужен установленный .NET 8 Desktop Runtime).
 
 ## Структура проекта
 
@@ -120,19 +97,6 @@ RasterEditor.WinFormsDemo/
 | `ImageSelectionOps` | Выделение, копирование, вставка |
 | `UndoRedoStack` | Отмена и повтор |
 
-## Публикация на GitHub
-
-```bash
-git init
-git add .
-git commit -m "Initial release: RasterEditor WinForms demo"
-git branch -M main
-git remote add origin https://github.com/H1k4n/RasterEditor.WinFormsDemo.git
-git push -u origin main
-```
-
-Первый релиз: см. [.github/RELEASE_v1.0.0.md](.github/RELEASE_v1.0.0.md).  
-Бинарник: **Releases → New release →** прикрепите артефакт из GitHub Actions (`RasterEditor-WinFormsDemo`) или локальной папки `publish/`.
 
 ## Лицензия
 
