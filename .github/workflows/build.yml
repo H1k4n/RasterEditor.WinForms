@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore RasterEditor.WinFormsDemo.csproj
+
+      - name: Build Release
+        run: dotnet build RasterEditor.WinFormsDemo.csproj -c Release --no-restore
+
+      - name: Publish (framework-dependent)
+        run: dotnet publish RasterEditor.WinFormsDemo.csproj -c Release -o publish --no-build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RasterEditor-WinFormsDemo
+          path: publish/
+          if-no-files-found: error
