@@ -46,12 +46,6 @@
 
 Тяжёлые операции выполняются асинхронно, чтобы интерфейс не блокировался.
 
-## Требования
-
-- Windows 10/11
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- Visual Studio 2022 (опционально) с workload **.NET desktop development**
-
 ### CLI
 
 ```bash
